@@ -1,0 +1,28 @@
+/* .card{
+    border: 3px solid #000000;
+    border-radius: 10px;
+    height:250px
+ }
+ 
+ .card:hover{
+     opacity: 0.7;
+ }
+ 
+ .img{
+     margin-top: 15px;
+ } */
+
+ .CardsCountries{
+
+        /*  TODO cuando achico la ventana del nav se me van hacia arriba las cards en vez de scrollear hacia abajo */
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-top: 12rem;  
+        }
+        
+        
+        

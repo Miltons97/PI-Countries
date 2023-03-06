@@ -1,0 +1,173 @@
+ @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Prompt:ital,wght@1,200&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+.title{
+   
+    font-family: 'Gloock', serif;
+font-family: 'Prompt', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-size:50px;
+text-align:left
+}
+
+h1{
+   color: rgb(29, 233, 240);
+   width: 80%;
+   left: 10%;
+   font: 100;
+} 
+footer {
+    background-color:rgba(31, 9, 51, 0.486);
+    position:absolute;
+    bottom: 0;
+    width: 99%;
+    height: 40px;
+    color: white;
+    text-align: center;
+}  
+.land{
+    font-family: 'Gloock', serif;
+    font-family: 'Prompt', sans-serif;
+    font: 300;
+}
+
+ .landingContainer { 
+    flex-direction: column;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../Components/Img/mundo-2.jpg);
+    --webkit-background-size: 100% 100%;
+    /* Safari 3.0 */
+    -moz-background-size: 100% 100%;
+    /* Gecko 1.9.2 (Firefox 3.6) */
+    -o-background-size: 100% 100%;
+    /* Opera 9.5 */
+    background-size: 100% 100%;
+}
+
+.NavLink{
+    margin-top: 5em;
+    /* font-size: 30px; */
+    /* width: 100%; */
+    padding: 10px 10px;
+    font-size: 24px;
+    font-weight: 10;
+    background: transparent;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    
+    
+}
+
+.gradient:hover{
+    border: 0;
+    cursor: pointer;
+    transform: translateY(-3px);
+    
+}
+
+.gradient{
+    border: 2px solid rgb(0, 0, 0);
+    color:  rgba(0, 0, 0, 0.959);
+    border: 0;
+    border-radius: 25px;
+    padding: 16px 24px;
+    font-weight: 500;
+    outline: 0;
+    background-image: linear-gradient(to right, #5C258D 0%, #4389A2  51%, #5C258D  100%) ;
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1).5s;
+}
+
+.gradient:active{
+    transform: translateY(3px);
+}
+  
+
+         
+/* button {
+    background-image: linear-gradient(to right, #5C258D 0%, #4389A2  51%, #5C258D  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  } */
+
+  /* button:hover {
+    background-position: right center; /* change the direction of the change here */
+    /* color: #ffffff; */
+    /* text-decoration: none; */
+    /*  */
+  
+  
+
+/* 
+button {
+    vertical-align: bottom;
+    height: 20%;
+    width: 100%;
+    bottom: 50px;
+    left: 45%;
+}
+
+
+button {
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    color: black;
+    width: 9em;
+    height: 3em;
+    line-height: em;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+button:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+}
+
+button:hover::before {
+    filter: blur(20px);
+}
+
+button:active {
+    background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}*/

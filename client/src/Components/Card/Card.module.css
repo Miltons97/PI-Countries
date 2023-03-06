@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lobster&family=PT+Sans&family=Spartan:wght@300&display=swap');
+
+
+.card{
+  font-family: 'Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 1000;
+ padding-top: 5px;
+ 
+}
+
+
+.card{
+    border: 1px solid black;
+    width: 100%;
+    height: 17em;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+    border: 4px  solid black;
+    box-shadow: inset 5px 5px 10px #1f1296, inset -5px -5px 10px #141111;
+    transition: 1s;
+    width: 20em;
+    
+}
+.img{
+    width: 80px;
+    height: 50px;
+    
+ }
+ 
+
+.card:hover {
+    height: 254px;
+  }
+
+  .content h3 {
+    text-shadow: 2px 2px 0px #fff;
+  }
+
+
+.icon{
+    width: 10px;
+   height: 30px
+}
+.nav{
+    text-decoration: none;
+   
+}
+.divButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+
+}
+
+
+.buttonX {
+    background: #7d7fd8;
+    padding: 5px 1rem;
+    margin-top: 15px;
+    border: 0;
+    color: rgb(233, 233, 233);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    border-radius: 100rem;
+    transition: 0.2s;
+    font-weight: 600;
+    width: 40px;
+  
+  }
+  
+
+  .moreInfo {
+  background: #42caca;
+  padding: 5px 1rem;
+  margin-top: 15px;
+  border: 0;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  border-radius: 100rem;
+  transition: 0.2s;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.moreInfo:hover{
+    border: 0;
+    cursor: pointer;
+    transform: translateY(-3px);
+    
+}

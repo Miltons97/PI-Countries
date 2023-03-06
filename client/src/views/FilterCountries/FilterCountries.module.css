@@ -1,0 +1,199 @@
+.filtersContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  gap: 5em;
+  position: fixed;
+  margin-top: 6em;
+
+
+}
+
+.filtersContainer{
+  padding: 1.3em 3em;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.fondContainer{
+  /* background-color: #2EE59D; */
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+   
+    /* transform: translateY(-7px); */
+  display:flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .fondConteiner{ */
+  /* background-image: url(../../Components/Img/mundo.jpg); */
+    /* /* display: flex;} */
+    /* margin: 15px; */
+    /* top: 60px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+     */
+
+/* } */
+/* 
+button {
+  vertical-align: bottom;
+  height: 20%;
+  width: 100%;
+  bottom: 50px;
+  left: 45%;
+}
+
+
+button {
+  text-decoration: none;
+  position: absolute;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: black;
+  width: 9em;
+  height: 3em;
+  line-height: em;
+  text-align: center;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+button:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+      background-position: 0%;
+  }
+
+  100% {
+      background-position: 400%;
+  }
+}
+
+button:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 35px;
+  transition: 1s;
+}
+
+button:hover::before {
+  filter: blur(20px);
+}
+
+button:active {
+  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+/* .AllContainer {
+    display: flex;
+    flex-direction: column;justify-content: center; 
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    background-image: url("../../Components/Img/mundo\ 4.jpg");
+    background-size: cover;
+    overflow: visible;
+    }
+
+    nav {
+        height: 60px;
+      }
+      
+    .filtersContainer {
+    display: flex;
+    position: fixed;
+    top: 60px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 10%;
+    background-color: #3f969be0;
+    color: whitesmoke;
+    z-index: 2;
+    border-top: 5px solid #205e61f7;
+    }
+    
+    .pagination {
+      display: flex;
+      position: fixed;
+      bottom: 5px;
+      justify-content: center;
+  }
+   */
