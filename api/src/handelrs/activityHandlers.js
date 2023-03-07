@@ -1,7 +1,7 @@
 const {createActivity, findActivities} =require ("../controllers/activityControllers")
 
 const postActivities = async (req, res) => {
-  const { name, difficulty, duration, season, idCountry } = req.body;
+  const { name, difficulty, duration, season, countryId } = req.body;
 
   try {
     if (!req.body) throw new Error("diligenciar los datos");
@@ -12,16 +12,16 @@ const postActivities = async (req, res) => {
     if (!duration)
       throw new Error("Duración de la Actividad es un dato obligatorio");
     if (!season) throw new Error("Temporada es un dato obligatorio");
-    if (!idCountry) throw new Error("Id del País es un dato obligatorio");
+    if (!countryId) throw new Error("Id del País es un dato obligatorio");
 
     const newActivTour = await createActivity(
       name,
       difficulty,
       duration,
       season,
-      idCountry
+      countryId
     );
-    res.send("Actividad creada exitosamente");
+    res.send(newActivTour);
   } catch (error) {
     res.status(404).send(error.message);
   }

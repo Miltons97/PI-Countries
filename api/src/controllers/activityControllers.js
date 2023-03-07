@@ -5,7 +5,7 @@ const createActivity = async (
   difficulty,
   duration,
   season,
-  idCountry
+  countryId
 ) => {
   const newAct = await Activity.create({
     name,
@@ -13,7 +13,7 @@ const createActivity = async (
     duration,
     season,
   });
-  const findCountry = idCountry.map(async (idC) => {
+  const findCountry = countryId.map(async (idC) => {
     const country = await Country.findByPk(idC);
     country.addActivity(newAct);
   });
@@ -33,6 +33,8 @@ const findActivities = async () => {
   });
 };
 
+
+module.exports = { createActivity, findActivities };
 // const modifyCountry = async ({ idActivity, idsCountries }) => {
 //   const findActivity = await Activity.findByPk(idActivity);
 
@@ -40,5 +42,3 @@ const findActivities = async () => {
 //   await findActivity.addCountries(idsCountries);
 //   return await findActivities();
 // };
-
-module.exports = { createActivity, findActivities };
