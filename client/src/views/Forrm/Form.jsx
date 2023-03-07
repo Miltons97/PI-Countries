@@ -5,16 +5,19 @@ import { getAllCountries, postActivity } from "../../redux/actions"
 
 import styles from "./Form.module.css"
 
-export default function Form(props) {
+export default function Form() {
     const dispatch = useDispatch()
      const countries = useSelector((state) => state.countries)
     const countriesNames = countries.map((country) => {
 
         return { label: country.name, value: country.id }
 })
+// const [loaded, setLoaded] = useState(false);
 
     const navigate = useNavigate()
     const activities = useSelector((state) => state.activities)
+
+   
 
     useEffect(() => {
     dispatch(getAllCountries())
@@ -114,6 +117,9 @@ const [errors, setErrors] = useState({
 
     return (
         <div className={styles.formContainer}>
+           
+       
+
             
             <form onSubmit={(e) => handleSubmit(e)} className= {styles.form}>
                 <div>
@@ -179,11 +185,11 @@ const [errors, setErrors] = useState({
                         </select>
                     </div>
                 </div>
-                
+    
                 <div>
                 <br></br>
                     {input.countryId.length > 0 && (
-                        <span className={styles.alertConfirm}> Usted está creando una actividad turística para los siguientes países: </span>)}
+                        <span className={styles.alertConfirm}> Creando una actividad </span>)}
                     {input.countryId.map((c) => (
                         <div>
                             <span className={styles.paisId}>{c}</span>
@@ -194,8 +200,11 @@ const [errors, setErrors] = useState({
                         <button>Confirmar</button>
                     </div>
                 </div>
+           
             </form>
-        </div>
+      
+
+      </div>
     )
 }
 

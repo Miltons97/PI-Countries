@@ -35,18 +35,26 @@ export const orderByPopulation = (order) => {
 export const filterByContinent = (payload) => {
     return {type: FILTER_BY_CONTINENT, payload: payload}
 }
-export function postActivity(){
+export function postActivity(actividad){
     return async function(dispatch){
-      try{
-        const apiData = await axios.get('http://localhost:3001/activities');
-          return dispatch({
-            type: "POST_ACTIVITIES",
-            payload: apiData,
-          })
+    
+                axios.post('http://localhost:3001/activities', actividad).then(res => {
+                    return dispatch({
+                      type: "POST_ACTIVITIES",
+                      payload: res.data,
+                    })
+                    
+
+                } ).catch(error => {dispatch({
+                    type: "POST_ACTIVITIES",
+                    payload: [],
+                }); alert(error.response.data) 
+            });
+                
   
-      } catch (error){
-        console.log(error)
-      }
+    
+        // console.log(error)
+      
     }
   }
   

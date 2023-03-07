@@ -8,6 +8,7 @@ import style from "./Detail.module.css";
 const Detail =()=> {
 	const dispatch = useDispatch();
 	// const navigate = useNavigate();
+	
 	const { id } = useParams();
     const [ country, setCountry] = useState({
         flag: "",
@@ -62,11 +63,10 @@ const Detail =()=> {
 							</div>
 						</div>
 				
-						
-					
-				</div>
+		
+	  		</div>
 
-				<div>
+		<div>
 					<h3>Country's Activities</h3>
 					
 						{country.activities.map((activity) => (
@@ -100,9 +100,12 @@ const Detail =()=> {
             </div>
 					</div>
 				</div>	
+
+
+	
 			</div>
 			
-		
+	  
 	);
 }
 

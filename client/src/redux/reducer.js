@@ -52,12 +52,13 @@ const rootReducer = (state=initialState,action) =>{
                         return {
                             ...state,
                             activities: action.payload,
-                            allActivities: action.payload
+                            // allActivities: action.payload
                         };
             
                     case POST_ACTIVITIES:
                         return {
                             ...state,
+                            activities:[...state.activities,action.payload],
                         };
             
             		case FILTERED_BY_ACTIVITIES:

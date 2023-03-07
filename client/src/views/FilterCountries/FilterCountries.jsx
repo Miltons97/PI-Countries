@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Cards from "../../Components/Cards/Cards";
-import {  getAllCountries, orderByName, orderByPopulation, filterByContinent } from "../../redux/actions"
+import {  getAllCountries, orderByName, orderByPopulation, filterByContinent, filterByActivities} from "../../redux/actions"
 import styles from './FilterCountries.module.css';
+
 
 
 const AllCountries = () => {
     const dispatch = useDispatch() 
     const countries = useSelector(state => state.countries) //? obtengo el estado actual de la lista de países del store
-    // const [isLoading, setIsLoading] = useState(true)
     const [selectedSeason, setSelectedSeason] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
     const [ order, setOrder] = useState('')
@@ -21,12 +21,12 @@ const AllCountries = () => {
       }
     }, [dispatch, countries.length])
 
-  // useEffect(() => {//nos treaemos del estado los paises cuando el componente se monta
+ 
+  //   useEffect(() => {//nos treaemos del estado los paises cuando el componente se monta
   //     setIsLoading(true) //loading si no tenemos respuesta de la API o respuesta lenta
   //     dispatch(getAllCountries(order));
   //     setIsLoading(false)
   // }, [dispatch,order])
-
 
   const countriesPerPage = 10 //? cantidad de paises por pagina
   const pagesToShow = 5 //? cantidad de nros de paginas que quiero mostrar (para que no sea una cantidad de nros interminables)
@@ -47,9 +47,6 @@ const AllCountries = () => {
 
 
 
-  // if (isLoading) {
-  //     return <div>Cargando...</div>
-  // }
 
   
   function handleFilterByContinent(event){
@@ -72,6 +69,11 @@ const AllCountries = () => {
     setSelectedSeason(event.target.value);
   }
   
+  function handleActivityBySeason(season){
+    dispatch(filterByActivities(season));
+    setCurrentPage(1);
+    setOrder(`Ordered ${season}`);
+  }
 
   return (
     <div className={styles.fondContainer}>
@@ -166,7 +168,26 @@ export default AllCountries;
 
 
 
-
+// const handlerSubmit = (event) => {
+//   event.preventDefault();
+//   activity.idCountry = selectedCountries;
+//   const newActivity = activity;
+//   dispatch(createActivity(newActivity));
+//   setActivity({
+//     name: "",
+//     difficulty: 3,
+//     duration: "",
+//     season: "",
+//     idCountry: [],
+//   });
+//   setOptionsToSelect(
+//     countries
+//       .map((c) => {
+//         return { id: c.IdCountry, value: c.name, checked: false };
+//       })
+//       .sort((a, b) => (a.value > b.value ? 1 : -1))
+//   );
+// };
 
 
 
