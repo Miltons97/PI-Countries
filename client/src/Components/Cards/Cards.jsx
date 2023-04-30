@@ -15,7 +15,7 @@ const CardsCountries = ({ countries, onClose }) => {
 
   useEffect(() => {
     if (!countries.length) {
-        dispatch(getAllCountries())
+        //dispatch(getAllCountries())
     }
   }, [dispatch, countries.length]);
 

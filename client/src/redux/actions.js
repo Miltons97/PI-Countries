@@ -11,7 +11,7 @@ export const POST_ACTIVITIES = "POST_ACTIVITIES"
 export function getAllCountries () {
     return async function (dispatch) {
         try {
-            const json = await axios.get("http://localhost:3001/countries");
+            const json = await axios.get("/countries");
             return dispatch({
                 type: "GET_ALL_COUNTRIES",
                 payload:json.data,
@@ -32,13 +32,17 @@ export const orderByPopulation = (order) => {
     return {type: ORDER_BY_POPULATION, payload: order}
 }
 
-export const filterByContinent = (payload) => {
-    return {type: FILTER_BY_CONTINENT, payload: payload}
+export function filterByContinent(payload){
+    return {
+        type: FILTER_BY_CONTINENT,
+        payload: payload
+    }
 }
+
 export function postActivity(actividad){
     return async function(dispatch){
     
-                axios.post('http://localhost:3001/activities', actividad).then(res => {
+                axios.post('/activities', actividad).then(res => {
                     return dispatch({
                       type: "POST_ACTIVITIES",
                       payload: res.data,
@@ -52,7 +56,8 @@ export function postActivity(actividad){
             });
                 
   
-    
+    // accion creator: retorna una funcion! en mi data viene la info               
+    // busco la informacion cuando me la traiga haga un dispatch la accion va a reducer!
         // console.log(error)
       
     }
@@ -61,7 +66,7 @@ export function postActivity(actividad){
   export const getAllActivities = () => {
       return async function (dispatch) {
           try {
-              const apiData = await axios.get("http://localhost:3001/activities")
+              const apiData = await axios.get("/activities")
               
               const allActivities = apiData.data;
               dispatch({ type: GET_ACTIVITIES, payload: allActivities })

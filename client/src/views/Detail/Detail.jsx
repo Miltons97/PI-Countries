@@ -1,13 +1,12 @@
 import {  useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useParams,} from "react-router-dom"
-// import { useNavigate } from "react-router-dom";
 import { getAllActivities } from "../../redux/actions";
 import style from "./Detail.module.css";
 
 const Detail =()=> {
 	const dispatch = useDispatch();
-	// const navigate = useNavigate();
+
 	
 	const { id } = useParams();
     const [ country, setCountry] = useState({
@@ -49,15 +48,15 @@ const Detail =()=> {
 								<img
 									className={style.flag}
 									src={country.flag}
-									alt="Imagen no disponible"
+									alt=""
 								></img>
 							</div>
 							<div className={style.right}>
 								<h2 className={style.name}>{country.name}</h2>
-								<h4 className={style.tag}>{country.continent}</h4>
+								<h4 className={style.tag}>Continent: {country.continent}</h4>
 								<h4>Code: {country.id}</h4>
 								<h4>Capital: {country.capital}</h4>
-								<h4>subRegion: {country.subRegion}</h4>
+								<h4>Region: {country.subRegion}</h4>
 								<h4>Area: {country.area} km²</h4>
 								<h4>Population: {country.population} Hab.</h4>
 							</div>
@@ -77,8 +76,7 @@ const Detail =()=> {
 						
 						))}
 					
-						{/* <p>No Activities yet</p> */}
-				
+		
 					<div className={style.buttons}>
 
 				      <div>
@@ -89,7 +87,7 @@ const Detail =()=> {
 			<div>
 			
 				<button className={style.buttonDetail}>
-			<NavLink className = {style.navDetail} to =  "/all"> Todos los Paises </NavLink>
+			<NavLink className = {style.navDetail} to =  "/home"> Todos los Paises </NavLink>
 
 				</button>
                 </div>   

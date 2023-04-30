@@ -5,14 +5,14 @@ import { getAllCountries, postActivity } from "../../redux/actions"
 
 import styles from "./Form.module.css"
 
+
 export default function Form() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
      const countries = useSelector((state) => state.countries)
     const countriesNames = countries.map((country) => {
 
         return { label: country.name, value: country.id }
 })
-// const [loaded, setLoaded] = useState(false);
 
     const navigate = useNavigate()
     const activities = useSelector((state) => state.activities)
@@ -22,26 +22,26 @@ export default function Form() {
     useEffect(() => {
     dispatch(getAllCountries())
     }, [dispatch])
-
+//  Seteamos los input aqui se van a alojar los valores de los estados definidos en mi form!
     const [input, setInputData] = useState({
         name: "",
         difficulty: "",
         duration: "",
-    season: "",
-    countryId: [],
+        season: "",
+        countryId: [],
     })
 
-const [errors, setErrors] = useState({
+    const [errors, setErrors] = useState({
     name: "",
     difficulty: "",
     duration: "",
     season: "",
     })
-
+// Mis handlesInpu: Aca definimos la funcion para que cuando cambie mi valor de los input seteamos las propiedades definidas!
     const handleInputChange = (e) => {
         setInputData({
         ...input,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value,   // seteamos todos con la misma funcion utilizando  la braquet notation!
         })
         setErrors(
             validate({
@@ -51,13 +51,13 @@ const [errors, setErrors] = useState({
     )
     }
 
-    const handleSelect = (e) => {
+        function handleSelect (e) {
         setInputData({
             ...input,
             countryId: [...input.countryId, e.target.value],
             })
         }
-
+// creamos la posActivity , creamos una actividad , y la guardo en mi reducer, a traves de mi dispatch
     const handleSubmit = (e) => {
         e.preventDefault()
         if (input.name && input.difficulty && input.season && input.countryId.length) {
@@ -209,3 +209,104 @@ const [errors, setErrors] = useState({
 }
 
 
+
+
+ // case FILTER_BY_DIETS:
+    //   const filterByDiets = state.filteredData.filter((restaurant) =>
+    //     restaurant.diets.includes(payload)
+    //   );
+
+    //   const filteredLis= payload===""?state.filteredData: filterByDiets
+    //   return { ... state , currentListRestaurants: filteredLis };
+
+    //   case FILTER_BY_MENU:
+    //     const filterBymenu = state.filteredData.filter((restaurant) =>
+    //       restaurant.menu.includes(payload)
+    //     );
+    //     const filteredListMenu = payload === "" ? filteredLis: filterBymenu;
+    //     return { ...state, currentListRestaurants: filteredListMenu };
+
+
+    // case FILTER_BY_ACTIVE:
+    //   const filteredData = state.filteredData.filter(
+    //     (item) => item.active === payload
+    //   );
+    //   const filteredLi = payload === "" ? state.filteredData : filteredData;
+    //   return {
+    //     ...state,
+    //     currentListRestaurants: filteredLi,
+    //   };
+
+
+
+
+//     import React, {useState} from "react";
+// import { View, Text, StyleSheet } from "react-native";
+// import firebase from "firebase/app"
+// import {Button} from "react-native-elements"
+// import Login from "../Login/Login";
+
+
+// export default function ListReviews({navigation, id}) {
+//     const [userLogged, setUserLogged] = useState(false)
+
+//     firebase.auth().onAuthStateChanged((user) => {
+//         user ? setUserLogged(true) : setUserLogged(false)
+//     })
+
+//     return (
+//    <View>
+//      {
+//         userLogged ? (
+//             <Button
+//             buttonStyle={style.btnReviews}
+//             title = "Escribe una opinion"
+//             titleStyle={style.titleReviews}
+//             icon = {{
+//                 type:"material-community",
+//                 name:"square-edit-outline",
+//                 color: "#a376c7"
+//             }}
+//             />
+
+//         ) :(
+//             <Text
+//             style={style.buttonLog}
+//             onPress={()=> navigation.navigate("login")}
+//             >
+//                  Para realizar tu opinion es necesario estar registrado.{""}
+//                  <Text style={style.login}>
+//                     Pulsa AQUÍ para iniciar seción.
+//                  </Text>
+//             </Text>
+
+//         )
+//      }
+//    </View>
+// )
+// }
+
+// const style= StyleSheet.create({
+//     btnReviews:{
+//      backgroundColor: "trasnparent"
+//     },
+
+//    titleReviews:{
+//      color:"#a376c7"
+//    },
+   
+//    buttonLog:{
+//     textAlign:"center",
+//     color:"#a376c7",
+//     padding:20,
+
+//    },
+   
+//    login:{
+
+//     fontWeight:"bold"
+//    }
+   
+   
+
+// })

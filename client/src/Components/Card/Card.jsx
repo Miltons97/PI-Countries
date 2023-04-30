@@ -1,4 +1,5 @@
-// Este componente debe mostrar la info de cada pais pero a su vez nos tiene que traer un link de cada pais con su info1
+// Este componente debe mostrar la info de cada pais pero a su
+// vez nos tiene que traer un link de cada pais con su info1!
 import { NavLink, useLocation } from "react-router-dom"
 import styles from "./Card.module.css"
 
@@ -22,6 +23,7 @@ const Card = (props) => {
                 <p>{props.name}</p>
             <div className={styles.content}>
                 <p>Continent: {props.continent}</p>
+                
                  <NavLink className={styles.nav} to= {`/home/${props.id}`}>
                  <button className={styles.moreInfo}>
                     Mas info

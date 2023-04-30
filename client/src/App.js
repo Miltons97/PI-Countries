@@ -4,7 +4,9 @@ import { Route, Routes, useLocation, } from 'react-router-dom'
 import NavBar from "./Components/NavBar/NavBar.jsx"
 import Cards from './Components/Cards/Cards.jsx'
 import{Landing,Detail,Form,FilterCountries} from "./views"
+import axios from "axios";
 
+axios.defaults.baseURL='http://localhost:3001/'
 function App() {
 
   const [countries, setCountries] = useState([]);
@@ -14,7 +16,7 @@ function App() {
 
   function onSearch(name) {
   
-    fetch(`http://localhost:3001/countries?name=${name}`)
+    fetch(`/countries?name=${name}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
@@ -46,11 +48,12 @@ function App() {
 
       <Routes>
 
-        < Route path="/" element={<Landing></Landing>} ></Route>
+        < Route exact path="/" element={<Landing></Landing>} ></Route>
         <Route path="/home" element={<Cards countries={countries} onClose={onClose} />} ></Route>
         <Route path="/home/:id" element={<Detail></Detail>} ></Route>
         < Route path="/create" element={<Form></Form>} ></Route>
         < Route path="/all" element={<FilterCountries></FilterCountries>} ></Route>
+     
 
 
       </Routes>
